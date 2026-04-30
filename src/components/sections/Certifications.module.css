@@ -1,0 +1,128 @@
+.certifications {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--primary);
+  overflow: hidden;
+}
+
+/* Sophisticated Background Watermark */
+.certifications::before {
+  content: 'COMPLIANCE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-hero);
+  font-size: 20vw;
+  color: rgba(0, 56, 147, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  margin-left: 6%; /* Maintaining alignment axis */
+  padding: 0 !important;
+  z-index: 2;
+}
+
+.intro {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.credentialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.credentialCard {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent);
+}
+
+.credTitle {
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.credDescription {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.standardsSection {
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.standardsLabel {
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.standardsList {
+  display: flex;
+  gap: 3rem;
+}
+
+.standardItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.standardCode {
+  font-family: var(--font-headings);
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.standardName {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1200px) {
+  .certifications {
+    height: auto;
+    max-height: none;
+    padding: 100px 0;
+  }
+}

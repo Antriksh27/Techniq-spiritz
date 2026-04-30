@@ -1,0 +1,85 @@
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.clientCard {
+  background-color: var(--white);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: opacity var(--transition-fast);
+}
+
+.clientCard:hover {
+  opacity: 0.8;
+}
+
+.placeholderLogo {
+  font-weight: 700;
+  color: var(--gray-medium);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.legacy {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 4rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.legacyContent h3 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.legacyContent p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .legacy {
+    padding: 2.5rem;
+  }
+}

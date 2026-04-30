@@ -1,0 +1,90 @@
+.portfolioBar {
+  background-color: var(--primary);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 10;
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  margin-left: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 !important;
+}
+
+.label {
+  font-family: var(--font-headings);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.items {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--white);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.viewAll {
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.viewAll:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+@media (max-width: 1200px) {
+  .portfolioBar {
+    height: auto;
+    padding: 2rem 0;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .items {
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,119 @@
+.ctaSection {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary); /* Blue */
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* Subtle Technical Precision Lines */
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0.4;
+}
+
+.ctaSection::after {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0.4;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+  z-index: 2;
+  width: 90%;
+  margin-left: 6%; /* Matching established alignment */
+  padding: 0 !important;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 45ch;
+  margin-bottom: 3rem;
+}
+
+.rightColumn {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 4rem;
+}
+
+.scenarioCard {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scenarioCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(10px);
+}
+
+.scenarioTitle {
+  font-family: var(--font-headings);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scenarioDesc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .ctaSection {
+    height: auto;
+    max-height: none;
+    padding: 100px 0;
+  }
+}
