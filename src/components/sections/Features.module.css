@@ -1,13 +1,28 @@
 .features {
   position: relative;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #f8f9fa; /* Off-white */
   color: var(--primary);
   overflow: hidden;
+  padding: 120px 0;
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-image: url('/features-bg.png');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.25;
+  z-index: 1;
+  mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
 }
 
 /* Sophisticated Blueprint Lines */
@@ -23,14 +38,15 @@
     linear-gradient(90deg, rgba(0, 56, 147, 0.03) 1px, transparent 1px);
   background-size: 80px 80px;
   opacity: 0.5;
-  z-index: 1;
+  z-index: 2;
 }
 
 .container {
+  position: relative;
   width: 90%;
   margin-left: 6%; /* Maintaining signature axis */
   padding: 0 !important;
-  z-index: 2;
+  z-index: 10;
 }
 
 .intro {

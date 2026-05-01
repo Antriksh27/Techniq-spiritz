@@ -111,43 +111,75 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: 1rem; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 3rem;
+  padding: 1.2rem 3.5rem;
   font-family: var(--font-headings);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  letter-spacing: 0.15em;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
   border: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   position: relative;
   overflow: hidden;
+  border-radius: var(--radius-none); /* Precise engineering corners */
+  text-decoration: none;
+  z-index: 1;
 }
 
 .btn-primary {
   background-color: var(--primary);
   color: var(--white);
+  box-shadow: 0 4px 0 rgba(10, 37, 64, 0.1);
 }
 
-.btn-primary::after {
+.btn-primary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  left: 0;
+  width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: all 0.6s ease;
+  background-color: var(--accent);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
 }
 
 .btn-primary:hover {
-  background-color: #1a3a5a;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(10, 37, 64, 0.2);
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(10, 37, 64, 0.15);
 }
 
-.btn-primary:hover::after {
-  left: 100%;
+.btn-primary:hover::before {
+  width: 100%;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  color: var(--white);
+  transform: translateY(-4px);
+}
+
+.btn-outline:hover::before {
+  width: 100%;
 }
 
 .accent-line {

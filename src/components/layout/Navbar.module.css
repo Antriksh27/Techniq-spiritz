@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 90px;
+  height: 120px;
   display: flex;
   align-items: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -12,7 +12,7 @@
 }
 
 .scrolled {
-  height: 90px;
+  height: 110px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
@@ -26,8 +26,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 92%;
-  margin-left: 4%; /* Shifted further left as requested */
+  width: 96%;
+  margin-left: 2%; /* Shifted further left as requested */
   padding: 0 !important;
 }
 

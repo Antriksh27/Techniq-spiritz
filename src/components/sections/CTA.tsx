@@ -23,6 +23,9 @@ const CTA = () => {
             <Link href="#footer" className="btn btn-primary">
               Discuss Your Project
             </Link>
+            <Link href="#products" className="btn btn-primary">
+              Explore Products
+            </Link>
           </div>
         </div>
 

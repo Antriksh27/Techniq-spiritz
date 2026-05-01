@@ -15,6 +15,7 @@ const Features = () => {
 
   return (
     <section className={styles.features}>
+      <div className={styles.backgroundContainer}></div>
       <div className={`${styles.container} container`}>
         <div className={`${styles.intro} fade-up`}>
           <h2 className="section-heading">

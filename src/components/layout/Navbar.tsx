@@ -50,8 +50,8 @@ const Navbar = () => {
           <Image 
             src="/logo.svg" 
             alt="Technik Spirits Logo" 
-            width={264} 
-            height={75} 
+            width={320} 
+            height={90} 
             priority
           />
         </Link>
