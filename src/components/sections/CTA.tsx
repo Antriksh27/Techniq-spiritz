@@ -33,7 +33,7 @@ const CTA = () => {
           {scenarios.map((s, index) => (
             <div key={index} className={styles.scenarioCard}>
               <h3 className={styles.scenarioTitle}>{s.title}</h3>
-              <p className={s.scenarioDesc}>{s.desc}</p>
+              <p className={styles.scenarioDesc}>{s.desc}</p>
             </div>
           ))}
         </div>
