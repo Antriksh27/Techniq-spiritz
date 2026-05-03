@@ -2,10 +2,9 @@
 
 import React from 'react';
 import { cn } from "@/lib/utils";
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps, Variants } from 'framer-motion';
 import { Globe, Phone, MapPin, ArrowRight } from 'lucide-react';
 
-// Icon component for contact details using Lucide
 const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
     const icons = {
         website: <Globe className="h-4 w-4 text-primary" />,
@@ -17,7 +16,7 @@ const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
 
 
 // Prop types for the HeroSection component
-interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface HeroSectionProps extends Omit<HTMLMotionProps<"section">, 'title'> {
   badge?: string;
   title: React.ReactNode;
   subtitle: string;
@@ -37,7 +36,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ({ className, badge, title, subtitle, callToAction, backgroundImage, contactInfo, ...props }, ref) => {
     
     // Animation variants
-    const containerVariants = {
+    const containerVariants: Variants = {
       hidden: { opacity: 0 },
       visible: {
         opacity: 1,
@@ -48,7 +47,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       },
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
       hidden: { y: 30, opacity: 0 },
       visible: {
         y: 0,
@@ -140,7 +139,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           }}
           initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
           animate={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
-          transition={{ duration: 1.6, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 1.6, ease: [0.23, 1, 0.32, 1] as const }}
         >
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-primary/5"></div>
