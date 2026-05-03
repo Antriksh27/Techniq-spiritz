@@ -1,178 +1,186 @@
 .hero {
-  position: relative;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--white);
+  background: transparent;
+  padding: 140px 0 100px;
+  position: relative;
   overflow: hidden;
-  padding-top: 180px; /* Further increased to provide total clearance */
-}
-
-/* Subtle Technical Precision Lines */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-  opacity: 0.6;
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 12%;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-  opacity: 0.6;
+  height: 200px;
+  background: linear-gradient(to top, var(--bg-main), transparent);
+  z-index: 1;
 }
 
 .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 100px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
   z-index: 2;
-  margin-left: 6%;
-  max-width: none;
-  width: 90%;
-  padding: 0 !important;
 }
 
-.textContent {
-  max-width: 1200px;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-headings);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.05;
+  color: var(--text-main);
   margin: 0;
+  letter-spacing: -0.03em;
 }
 
-.mainHeading {
-  font-family: var(--font-hero);
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Refined size for perfect balance */
-  line-height: 0.95;
+.period {
   color: var(--primary);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  max-width: 25ch; /* Increased for better fit */
 }
 
-.description {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 50ch;
-}
-
-.ctas {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
-}
-
-.trustSignals {
-  display: flex;
-  gap: 3.5rem;
-}
-
-.signal {
+.descriptionWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 24px;
 }
 
-.signal strong {
-  font-family: var(--font-headings);
-  font-size: 1.2rem;
-  color: var(--primary);
-  font-weight: 700;
-}
-
-.signal span {
-  font-family: var(--font-headings);
-  font-size: 0.6rem;
-  font-weight: 800;
+.subtitle {
+  font-size: 1.125rem;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  max-width: 580px;
+  line-height: 1.6;
 }
 
-.visual {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 55%;
-  height: 100%;
-  z-index: 1;
-  background: #fcfcfc; /* Subtle light panel for image framing */
+.highlightText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  max-width: 500px;
+  line-height: 1.5;
+  border-left: 2px solid var(--primary);
+  padding: 8px 0 8px 24px;
+  font-style: italic;
+  position: relative;
+  background: linear-gradient(90deg, rgba(233, 80, 47, 0.03), transparent);
 }
 
-.visual::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, var(--white) 0%, transparent 60%);
-  z-index: 2;
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
 }
 
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 100%;
-  padding: 6rem; /* Ensures "not cropped" by adding breathing room */
+  padding: 30px;
 }
 
-.productImage {
+.cornerMarkerTL, .cornerMarkerBR {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--primary);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.cornerMarkerTL {
+  top: 0;
+  left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.cornerMarkerBR {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.imageContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border-light);
+  border-radius: 60px;
+  opacity: 0.3;
+}
+
+.imageWrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: contain !important; /* CRITICAL: No cropping of equipment */
-  filter: saturate(0.95) contrast(1.05);
+  aspect-ratio: 1/1.1;
+  border-radius: 48px;
+  overflow: hidden;
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  z-index: 1;
 }
 
-@media (max-width: 1200px) {
-  .hero {
-    height: auto;
-    max-height: none;
-    padding-bottom: 60px;
-    padding-top: 130px;
-  }
-  
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.2) 100%);
+  pointer-events: none;
+}
+
+.heroImage {
+  object-fit: cover;
+  transition: transform 20s linear;
+}
+
+.hero:hover .heroImage {
+  transform: scale(1.1) rotate(0.5deg);
+}
+
+@media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 40px;
   }
   
-  .visual {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    order: -1;
+  .title {
+    font-size: 3.2rem;
   }
-  
-  .visual::after {
-    background: linear-gradient(to bottom, var(--white) 0%, transparent 40%);
+
+  .ctaGroup {
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding-top: 120px;
+  .container {
+    padding: 0 24px;
   }
-  
-  .ctas {
-    flex-direction: column;
+
+  .title {
+    font-size: 2.6rem;
   }
-  
-  .trustSignals {
-    gap: 2rem;
-    flex-wrap: wrap;
+
+  .imageWrapper {
+    aspect-ratio: 1/1;
+    border-radius: 32px;
+  }
+
+  .imageContainer {
+    padding: 15px;
   }
 }

@@ -1,36 +1,29 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from './Portfolio.module.css';
 
-const Portfolio = () => {
+const Finally = () => {
   return (
-    <section id="portfolio" className="section-padding" style={{ backgroundColor: 'var(--gray-light)' }}>
-      <div className="container">
-        <div className={styles.header}>
-          <h2 className={styles.title}>Serving 500+ hospitals across India.</h2>
-          <p className={styles.subtitle}>
-            Trusted by leading government and private medical institutions for over five decades.
+    <section id="experience" className={styles.finally}>
+      <div className={styles.container}>
+        <motion.div 
+          className={styles.content}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.title}>Finally.</h2>
+          <p className={styles.description}>
+            A healthcare experience that actually puts you in control. No more waiting for symptoms. No more guesswork. Just pure, actionable data to help you live your best life.
           </p>
-        </div>
-
-        <div className={styles.grid}>
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className={styles.clientCard}>
-              <div className={styles.placeholderLogo}>
-                Hospital Partner {i}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className={styles.legacy}>
-          <div className={styles.legacyContent}>
-            <h3>50+ Years of Manufacturing Legacy</h3>
-            <p>Our deep-rooted experience in medical engineering ensures that every piece of equipment we manufacture is built for longevity and life-critical performance.</p>
-          </div>
-        </div>
+          <button className="btn btn-outline">LEARN MORE ABOUT THE SCAN</button>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default Portfolio;
+export default Finally;

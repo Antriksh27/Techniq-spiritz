@@ -1,42 +1,28 @@
+"use client";
+
 import React from 'react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './CTA.module.css';
 
 const CTA = () => {
-  const scenarios = [
-    { title: "Planning a New Hospital?", desc: "Full-scale MGPS design and equipment sourcing for greenfield projects." },
-    { title: "Expanding Capacity?", desc: "Modular systems designed for seamless integration and staged scaling." },
-    { title: "Retrofit & Upgrades?", desc: "Replace outdated, noisy compressors with silent, efficient plant rooms." }
-  ];
-
   return (
-    <section className={styles.ctaSection}>
-      <div className={`${styles.container} container`}>
-        <div className={`${styles.leftColumn} fade-up`}>
-          <h2 className={styles.title}>
-            Let’s discuss your medical gas requirement
-          </h2>
+    <section id="contact" className={styles.cta}>
+      <div className={styles.container}>
+        <motion.div 
+          className={styles.content}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.title}>Let’s discuss your medical gas requirement<span className={styles.period}>.</span></h2>
           <p className={styles.description}>
-            We help hospital owners and consultants assess the right medical gas system for their specific needs.
+            Whether you are planning a new hospital, expanding capacity, upgrading an existing plant room, or evaluating options for a live project, we can help you assess the right medical gas system.
           </p>
-          <div className={styles.buttons}>
-            <Link href="#footer" className="btn btn-primary">
-              Discuss Your Project
-            </Link>
-            <Link href="#products" className="btn btn-primary">
-              Explore Products
-            </Link>
+          <div className={styles.btnGroup}>
+            <button className="btn btn-primary">Discuss Your Project</button>
+            <button className="btn btn-outline">Explore Products</button>
           </div>
-        </div>
-
-        <div className={`${styles.rightColumn} fade-up`} style={{ animationDelay: '0.2s' }}>
-          {scenarios.map((s, index) => (
-            <div key={index} className={styles.scenarioCard}>
-              <h3 className={styles.scenarioTitle}>{s.title}</h3>
-              <p className={styles.scenarioDesc}>{s.desc}</p>
-            </div>
-          ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

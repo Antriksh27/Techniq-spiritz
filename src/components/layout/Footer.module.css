@@ -1,200 +1,224 @@
 .footer {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 100px 0 50px;
+  padding: 140px 0 60px;
+  background-color: #0F172A; /* Deep Navy for premium feel */
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle Technical Precision Lines */
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
 }
 
 .container {
-  width: 90%;
-  margin-left: 6%; /* Matching established alignment axis */
-  padding: 0 !important;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 4rem;
-  padding-bottom: 80px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+  gap: 80px;
 }
 
 .brand {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 32px;
+  max-width: 400px;
 }
 
-.logoContainer {
+.logoWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 16px;
 }
 
-.logo {
-  filter: brightness(0) invert(1);
-  object-fit: contain;
-  width: 200px;
+.footerLogo {
   height: auto;
+  width: 200px;
+  filter: brightness(0) invert(1);
 }
 
 .formerName {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  text-transform: uppercase;
 }
 
-.description {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+.tagline {
+  font-size: 1.125rem;
   line-height: 1.6;
-  max-width: 35ch;
+  opacity: 0.6;
 }
 
-.whatsappLink {
-  display: inline-flex;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 0.8rem 1.5rem;
-  font-family: var(--font-headings);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s ease;
+.linkGroup {
+  display: flex;
+  gap: 80px;
+  flex: 1;
+  justify-content: flex-end;
 }
 
-.whatsappLink:hover {
-  transform: translateY(-3px);
-  background: var(--white);
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.linkGroup h4 {
-  font-family: var(--font-headings);
-  font-size: 0.75rem;
-  color: var(--accent);
+.column h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 800;
   letter-spacing: 0.2em;
+  color: #fff;
+  opacity: 0.4;
+  margin-bottom: 24px;
   text-transform: uppercase;
-  margin-bottom: 2rem;
 }
 
-.linkGroup ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.linkGroup a {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+.column a, .column p {
+  font-size: 0.95rem;
+  color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  opacity: 0.6;
+  transition: var(--transition-fast);
+  line-height: 1.6;
 }
 
-.linkGroup a:hover {
-  color: var(--white);
+.column a:hover {
+  opacity: 1;
+  color: var(--primary);
+  transform: translateX(4px);
 }
 
-.contactInfo {
+.companyName {
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+.location {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0.8 !important;
+}
+
+.whatsappBtn {
+  color: #4ADE80 !important;
+  font-weight: 700;
+  opacity: 1 !important;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 2rem;
+  align-items: center;
+  gap: 8px;
 }
 
-.contactInfo strong {
-  color: var(--white);
-  letter-spacing: 0.1em;
-}
-
-.social {
-  display: flex;
-  gap: 2rem;
-}
-
-.social a {
-  font-family: var(--font-headings);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.1em;
-}
-
-.social a:hover {
-  color: var(--accent);
+.contactUs {
+  margin-top: 12px;
+  font-weight: 700;
+  text-decoration: underline !important;
+  opacity: 1 !important;
+  color: var(--primary) !important;
 }
 
 .bottom {
-  padding-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.socials {
+  display: flex;
+  gap: 40px;
+}
+
+.socials a {
+  font-size: 0.7rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+  transition: var(--transition-fast);
+}
+
+.socials a:hover {
+  opacity: 1;
+  color: var(--primary);
 }
 
 .legal {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  font-family: var(--font-body);
+  gap: 24px;
+}
+
+.legal a, .legal p {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  opacity: 0.4;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.legal a:hover {
+  opacity: 0.8;
 }
 
 .sep {
-  opacity: 0.3;
+  opacity: 0.1;
+  font-size: 0.7rem;
 }
 
-.trustSignals {
-  display: flex;
-  gap: 2.5rem;
-  font-family: var(--font-headings);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.copyright {
+  margin: 0;
 }
 
 @media (max-width: 1200px) {
   .top {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    gap: 80px;
+  }
+  
+  .linkGroup {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
   }
 }
 
 @media (max-width: 768px) {
-  .top {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .container {
+    padding: 0 24px;
   }
   
   .bottom {
     flex-direction: column;
     align-items: flex-start;
+    gap: 40px;
   }
   
-  .trustSignals {
+  .legal {
     flex-direction: column;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .sep {
+    display: none;
   }
 }

@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Playfair_Display, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  variable: "--font-bebas",
+const playfair = Playfair_Display({
+  variable: "--font-serif",
   subsets: ["latin"],
   display: 'swap',
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const ibmPlex = IBM_Plex_Sans({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
   subsets: ["latin"],
   display: 'swap',
 });
@@ -52,7 +52,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${ibmPlex.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

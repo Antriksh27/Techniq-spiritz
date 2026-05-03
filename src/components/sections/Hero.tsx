@@ -1,67 +1,77 @@
+"use client";
+
 import React from 'react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Hero.module.css';
+import MeshGradient from '../ui/MeshGradient';
 
 const Hero = () => {
   return (
-    <section className={`${styles.hero} clinical-grid`}>
-      <div className={`${styles.container} container`}>
-        <div className={`${styles.textContent} fade-up`}>
-          <div className={styles.badge}>
-            <span>Specialists in MGPS plant room equipment</span>
-          </div>
+    <section className={styles.hero}>
+      <MeshGradient />
+      <div className="grid-overlay" />
+      <div className="vertical-accent" />
+      
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className="section-marker">Specialists in MGPS plant room equipment</div>
+          <motion.h1 
+            className={styles.title}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            MEDICAL GAS PIPELINE SYSTEM (MGPS) FOR HOSPITALS<span className={styles.period}>.</span>
+          </motion.h1>
           
-          <h1 className={styles.mainHeading}>
-            MEDICAL GAS<br />
-            PIPELINE SYSTEM (MGPS)<br />
-            FOR HOSPITALS
-          </h1>
-          
-          <div className={styles.description}>
-            <p>
+          <motion.div 
+            className={styles.descriptionWrapper}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className={styles.subtitle}>
               We design and manufacture source equipment for Medical Gas Pipeline Systems (MGPS), including medical air compressors, medical vacuum pumps, oxygen generators, and anaesthetic gas scavenging systems (AGSS).
             </p>
-            <p style={{ fontWeight: 600, color: 'var(--primary)', marginTop: '1rem' }}>
-              Our systems are purpose-built for hospitals prioritizing low noise & vibrations, space optimization and less electricity consumption.
+            <p className={styles.subtitle}>
+              Our systems are purpose-built for hospitals prioritizing low noise & vibrations, space optimization and less electricity consumption. 
             </p>
-            <p style={{ opacity: 0.7, fontSize: '0.85rem', marginTop: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              healthcare environments where noise, vibration, space, reliability, and compliance are non-negotiable.
+            <p className={styles.highlightText}>
+              Healthcare environments where noise, vibration, space, reliability, and compliance are non-negotiable.
             </p>
-          </div>
-          
-          <div className={styles.ctas} style={{ marginTop: '1.5rem' }}>
-            <Link href="#products" className="btn btn-primary">Explore Products</Link>
-            <Link href="#footer" className="btn btn-outline">Discuss Your Project</Link>
-          </div>
-          
-          <div className={styles.trustSignals}>
-            <div className={styles.signal}>
-              <strong>CDSCO</strong>
-              <span>Registered</span>
-            </div>
-            <div className={styles.signal}>
-              <strong>ISO 13485</strong>
-              <span>Certified</span>
-            </div>
-            <div className={styles.signal}>
-              <strong>PATENTED</strong>
-              <span>Technology</span>
-            </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      <div className={`${styles.visual} fade-in`}>
-        <div className={styles.imageContainer}>
-          <Image 
-            src="/product-compressor.png" 
-            alt="Medical Gas System Engineering" 
-            fill
-            className={styles.productImage}
-            priority
-          />
+          <motion.div 
+            className={styles.ctaGroup}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <button className="btn btn-primary">Explore Products</button>
+            <button className="btn btn-outline">Discuss Your Project</button>
+          </motion.div>
         </div>
+
+        <motion.div 
+          className={styles.imageContainer}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className={styles.cornerMarkerTL} />
+          <div className={styles.cornerMarkerBR} />
+          <div className={styles.imageWrapper}>
+            <Image 
+              src="/hero-mgps.png" 
+              alt="Futuristic MGPS Plant Room" 
+              fill
+              className={styles.heroImage}
+              priority
+            />
+            <div className={styles.imageOverlay} />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

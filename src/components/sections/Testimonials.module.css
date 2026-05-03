@@ -1,145 +1,127 @@
 .testimonials {
+  padding: 140px 0;
+  background-color: var(--bg-white);
   position: relative;
-  height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: #f8f9fa; /* Off-white */
   overflow: hidden;
 }
 
-/* Subtle Technical Precision Lines */
-.testimonials::before {
-  content: '';
-  position: absolute;
-  top: 8%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-  opacity: 0.4;
-}
-
-.testimonials::after {
-  content: '';
-  position: absolute;
-  bottom: 8%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-  opacity: 0.4;
-}
-
 .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 60px;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 6rem;
-  align-items: center;
   z-index: 2;
-  width: 90%;
-  margin-left: 6%; /* Matching established alignment axis */
-  padding: 0 !important;
 }
 
-.leftColumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.header {
+  margin-bottom: 80px;
 }
 
-.rightColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  border-left: 1px solid var(--border-light);
-  padding-left: 4rem;
+.title {
+  font-family: var(--font-headings);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
 }
 
-.intro {
-  margin-bottom: 2rem;
+.period {
+  color: var(--primary);
 }
 
-.subtitle {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-top: 1rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
 .card {
-  position: relative;
+  background-color: var(--bg-white);
+  padding: 64px;
+  border-radius: 32px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 60px;
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-light);
+  position: relative;
 }
 
 .card::before {
-  content: '"';
+  content: "“";
   position: absolute;
-  top: -1.5rem;
-  left: -2.5rem;
-  font-family: var(--font-hero);
-  font-size: 5rem;
-  color: var(--accent);
-  opacity: 0.2;
+  top: 40px;
+  left: 40px;
+  font-family: var(--font-headings);
+  font-size: 6rem;
+  color: var(--primary);
+  opacity: 0.05;
   line-height: 1;
 }
 
-.text {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--primary);
-  font-style: italic;
-  max-width: 60ch;
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
+  border-color: var(--primary);
 }
 
-.authorInfo {
+.text {
+  font-family: var(--font-headings);
+  font-size: 1.85rem;
+  line-height: 1.4;
+  color: var(--text-main);
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.01em;
+}
+
+.footer {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 8px;
 }
 
-.authorName {
-  font-family: var(--font-headings);
-  font-size: 0.9rem;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.authorTitle {
+.author {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-main);
+}
+
+.role {
+  font-size: 0.9rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .institution {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: var(--accent);
+  font-size: 0.85rem;
+  color: var(--primary);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
 }
 
-@media (max-width: 1200px) {
-  .testimonials {
-    height: auto;
-    max-height: none;
-    padding: 100px 0;
-  }
-  
-  .container {
+@media (max-width: 1024px) {
+  .grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
   
-  .rightColumn {
-    padding-left: 0;
-    border-left: none;
+  .card {
+    padding: 40px;
+  }
+  
+  .text {
+    font-size: 1.5rem;
   }
 }
