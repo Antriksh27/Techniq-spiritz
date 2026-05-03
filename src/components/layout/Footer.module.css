@@ -1,224 +1,187 @@
 .footer {
-  padding: 140px 0 60px;
-  background-color: #0F172A; /* Deep Navy for premium feel */
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
+  background-color: #1A1A1A;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 80px 0 40px;
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0 40px;
 }
 
-.top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 120px;
-  gap: 80px;
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  max-width: 400px;
-}
-
-.logoWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footerLogo {
-  height: auto;
-  width: 200px;
-  filter: brightness(0) invert(1);
-}
-
-.formerName {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  opacity: 0.4;
-  text-transform: uppercase;
-}
-
-.tagline {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  opacity: 0.6;
-}
-
-.linkGroup {
-  display: flex;
-  gap: 80px;
-  flex: 1;
-  justify-content: flex-end;
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 80px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
-.column h4 {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: #fff;
-  opacity: 0.4;
-  margin-bottom: 24px;
+.logoName {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
   text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
-.column a, .column p {
-  font-size: 0.95rem;
-  color: #fff;
-  text-decoration: none;
-  opacity: 0.6;
-  transition: var(--transition-fast);
-  line-height: 1.6;
-}
-
-.column a:hover {
-  opacity: 1;
-  color: var(--primary);
-  transform: translateX(4px);
-}
-
-.companyName {
-  font-weight: 700;
-  opacity: 1 !important;
-}
-
-.location {
-  font-weight: 600;
+.logoSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
   letter-spacing: 0.05em;
-  opacity: 0.8 !important;
+  margin-bottom: 20px;
 }
 
-.whatsappBtn {
-  color: #4ADE80 !important;
-  font-weight: 700;
-  opacity: 1 !important;
+.brandDescription {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.columnLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.linkList {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.contactUs {
-  margin-top: 12px;
-  font-weight: 700;
-  text-decoration: underline !important;
-  opacity: 1 !important;
-  color: var(--primary) !important;
+.link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.4;
 }
 
-.bottom {
+.link:hover {
+  color: #FFFFFF;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.locationLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.contactEmail, .contactPhone {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.whatsappLink {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: #C84B2A;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.socialLink {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #FFFFFF;
+}
+
+.bottomDivider {
+  height: 1px;
+  background-color: rgba(255,255,255,0.07);
+  margin-bottom: 24px;
+}
+
+.bottomRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 48px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.socials {
-  display: flex;
-  gap: 40px;
+.bottomLeft, .bottomRight {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
 }
 
-.socials a {
-  font-size: 0.7rem;
-  color: #fff;
+.bottomCenter {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bottomLeft a {
+  color: inherit;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  opacity: 0.4;
-  transition: var(--transition-fast);
 }
 
-.socials a:hover {
-  opacity: 1;
-  color: var(--primary);
+.bottomLeft span {
+  margin: 0 8px;
 }
 
-.legal {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.legal a, .legal p {
-  font-size: 0.75rem;
-  color: #fff;
-  opacity: 0.4;
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.legal a:hover {
-  opacity: 0.8;
-}
-
-.sep {
-  opacity: 0.1;
-  font-size: 0.7rem;
-}
-
-.copyright {
-  margin: 0;
-}
-
-@media (max-width: 1200px) {
-  .top {
-    flex-direction: column;
-    gap: 80px;
-  }
-  
-  .linkGroup {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 60px;
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  
-  .bottom {
-    flex-direction: column;
-    align-items: flex-start;
+  .grid {
+    grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .legal {
+  .bottomRow {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    gap: 20px;
+    text-align: center;
   }
-  
-  .sep {
-    display: none;
+
+  .container {
+    padding: 0 24px;
   }
 }

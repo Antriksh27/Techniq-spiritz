@@ -1,215 +1,185 @@
-.problem {
-  padding: 140px 0;
-  background-color: var(--bg-soft);
-  position: relative;
-  overflow: hidden;
+.section {
+  background-color: #EDEAE5;
+  padding: 100px 0;
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0 40px;
 }
 
-.intro {
-  margin-bottom: 120px;
-  max-width: 900px;
+.header {
+  margin-bottom: 80px;
+  max-width: 800px;
 }
 
-.introLead {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.eyebrow {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.introLead::after {
-  content: "";
-  height: 1px;
-  flex-grow: 1;
-  background: var(--border-light);
-}
-
-.introBody {
-  font-family: var(--font-headings);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.15;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-
-.highlight {
-  color: var(--accent);
-  position: relative;
-  display: inline-block;
-}
-
-.mainContent {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 100px;
-  align-items: flex-start;
-}
-
-.tagline {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  display: block;
+  color: #C84B2A;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-right: 12px;
+}
+
+.h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.05;
+  color: #1A1A1A;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
   margin-bottom: 24px;
 }
 
-.title {
-  font-family: var(--font-headings);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  line-height: 1.1;
-  color: var(--text-main);
-  margin-bottom: 48px;
+.introText {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: #4A4A4A;
+  line-height: 1.6;
+  max-width: 720px;
 }
 
-.imageWrapper {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   position: relative;
+  margin-bottom: 80px;
 }
 
-.problemImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-.period {
-  color: var(--primary);
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.description {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--text-main);
-}
-
-.consequencesWrapper {
-  background-color: var(--bg-white);
-  padding: 56px;
-  border-radius: 32px;
-  margin: 20px 0;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
-}
-
-.consequencesWrapper::after {
+.grid::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: var(--primary);
-  opacity: 0.6;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: rgba(0,0,0,0.08);
+  transform: translateX(-50%);
 }
 
-.consequencesWrapper:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-}
-
-.listTitle {
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 32px;
-  color: var(--text-muted);
+.column {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #C84B2A;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1.2;
+  color: #1A1A1A;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.mutedLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #8A8A8A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
 }
 
 .list {
   list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 
-.list li {
-  font-size: 1.1rem;
-  color: var(--text-main);
-  padding-left: 36px;
+.listItem {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #4A4A4A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-left: 20px;
   position: relative;
   line-height: 1.5;
-  transition: var(--transition-smooth);
 }
 
-.list li::before {
-  content: '→';
+.problemBullet::before {
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--primary);
-  font-weight: 700;
-  transition: transform 0.3s ease;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: #C84B2A;
 }
 
-.list li:hover {
-  transform: translateX(8px);
-  color: var(--primary);
+.solutionBullet::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #C84B2A;
 }
 
-.list li:hover::before {
-  transform: scale(1.2);
+.calloutBar {
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-left: 3px solid #C84B2A;
+  padding: 20px 28px;
 }
 
-.footerText {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.01em;
+.calloutText {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  color: #4A4A4A;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 40px;
-  }
-  .mainContent {
+  .grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 80px;
+  }
+  
+  .grid::after {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 24px;
-  }
-  
-  .introBody {
-    font-size: 2.2rem;
-  }
-  
-  .consequencesWrapper {
-    padding: 32px;
   }
 }

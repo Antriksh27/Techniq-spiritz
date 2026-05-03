@@ -1,158 +1,245 @@
-.products {
-  padding: 140px 0;
-  background-color: var(--bg-main);
-  position: relative;
+.section {
+  background-color: #F5F2EE;
+  padding: 100px 0;
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 40px;
 }
 
-.intro {
-  margin-bottom: 80px;
-  text-align: left;
-  max-width: 800px;
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
 }
 
-.intro h2 {
-  font-family: var(--font-headings);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.15;
-  color: var(--text-main);
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
+.headerLeft {
+  max-width: 600px;
 }
 
-.intro p {
-  font-size: 1.125rem;
-  color: var(--text-muted);
-  line-height: 1.7;
+.eyebrow {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C84B2A;
+  margin-bottom: 16px;
 }
 
-.mainGrid {
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-right: 12px;
+}
+
+.h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.0;
+  color: #1A1A1A;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.introText {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+.viewAllTop {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #8A8A8A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.viewAllTop:hover {
+  color: #C84B2A;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 24px;
+  margin-bottom: 64px;
 }
 
-.column {
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-top: 2px solid #C84B2A;
   display: flex;
   flex-direction: column;
-  transition: var(--transition-smooth);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 
-.column:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
-  border-color: var(--border-strong);
+.topLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: #C84B2A;
+  padding: 16px 20px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .imageWrapper {
-  position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 0;
-  background: var(--bg-soft);
+  aspect-ratio: 16/9;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: padding-bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.column:hover .imageWrapper {
-  padding-bottom: 75%; /* Creates a 4:3 aspect ratio perfectly */
+  background-color: #F0F2F5;
 }
 
 .productImage {
-  object-fit: contain !important;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(0.9);
-}
-
-.column:hover .productImage {
-  transform: scale(1.05);
+  object-fit: cover;
 }
 
 .cardContent {
-  padding: 48px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-grow: 1;
 }
 
-.systemIndex {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 0.2em;
+.productName {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1.1;
+  color: #1A1A1A;
   margin-bottom: 16px;
+  font-weight: 700;
   text-transform: uppercase;
-}
-
-.column h3 {
-  font-family: var(--font-headings);
-  font-size: 1.5rem;
-  color: var(--text-main);
-  line-height: 1.2;
-  margin-bottom: 20px;
-  letter-spacing: -0.01em;
 }
 
 .description {
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #4A4A4A;
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  flex-grow: 1;
 }
 
-.features {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto;
+  margin-bottom: 24px;
 }
 
-.featureBadge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 6px 14px;
-  background: var(--bg-soft);
-  color: var(--text-main);
-  border: 1px solid var(--border-light);
-  border-radius: 100px;
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  background-color: rgba(200,75,42,0.08);
+  color: #C84B2A;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.learnMore {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: #C84B2A;
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: var(--transition-fast);
 }
 
-.column:hover .featureBadge {
-  border-color: var(--primary);
-  color: var(--primary);
+.footerDivider {
+  height: 1px;
+  background-color: rgba(0,0,0,0.10);
+  margin-bottom: 24px;
 }
 
-@media (max-width: 1200px) {
-  .mainGrid {
+.portfolioRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolioLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.portfolioLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #8A8A8A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.portfolioLinks {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #4A4A4A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  gap: 8px;
+}
+
+.portfolioLinks span {
+  color: #8A8A8A;
+}
+
+.viewAllBottom {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #C84B2A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  .mainGrid {
+  .grid {
     grid-template-columns: 1fr;
   }
-  .cardContent {
-    padding: 32px;
+  
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .portfolioRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .portfolioLeft {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

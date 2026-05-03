@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
-import { Playfair_Display, IBM_Plex_Sans } from "next/font/google";
+import { Barlow_Condensed, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-serif",
+const barlowCondensed = Barlow_Condensed({
+  weight: ["700", "800"],
+  variable: "--font-heading",
   subsets: ["latin"],
   display: 'swap',
 });
 
-const ibmPlex = IBM_Plex_Sans({
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+const sourceSerif4 = Source_Serif_4({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
+  subsets: ["latin"],
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  variable: "--font-mono",
   subsets: ["latin"],
   display: 'swap',
 });
@@ -52,7 +61,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${ibmPlex.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${barlowCondensed.variable} ${sourceSerif4.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

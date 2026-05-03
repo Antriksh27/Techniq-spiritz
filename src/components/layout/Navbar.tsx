@@ -6,34 +6,24 @@ import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-    const navLinks = [
+  const navLinks = [
     { name: 'Our Systems', href: '#services' },
     { name: 'Engineering', href: '#features' },
-    { name: 'Audience', href: '#audience' },
     { name: 'Compliance', href: '#certifications' },
   ];
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.left}>
           <Link href="/" className={styles.logo}>
             <Image 
               src="/logo.svg" 
               alt="Technik Spirits MedTech" 
-              width={180} 
-              height={40} 
+              width={140} 
+              height={32} 
               className={styles.logoImage}
               priority
             />
@@ -48,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.right}>
-          <Link href="#contact" className={styles.bookBtn}>
+          <Link href="#contact" className="btn btn-primary" style={{ padding: '10px 24px', fontSize: '10px' }}>
             DISCUSS PROJECT
           </Link>
           <button 
@@ -66,10 +56,10 @@ const Navbar = () => {
           <Image 
             src="/logo.svg" 
             alt="Technik Spirits MedTech" 
-            width={150} 
-            height={35} 
+            width={120} 
+            height={28} 
           />
-          <button onClick={() => setIsMobileMenuOpen(false)}>CLOSE</button>
+          <button onClick={() => setIsMobileMenuOpen(false)} className={styles.closeBtn}>CLOSE</button>
         </div>
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => (
@@ -77,6 +67,9 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <Link href="#contact" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>
+            DISCUSS PROJECT
+          </Link>
         </nav>
       </div>
     </header>

@@ -1,151 +1,110 @@
-.solution {
-  padding: 160px 0;
-  background-color: var(--bg-white);
-  position: relative;
-  overflow: hidden;
-}
-
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0 40px;
 }
 
 .mainContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 120px;
-  align-items: flex-start;
+  gap: 100px;
+  align-items: start;
 }
 
-.tagline {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--primary);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 24px;
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .title {
-  font-family: var(--font-headings);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
-  color: var(--text-main);
-  margin-bottom: 64px;
-  letter-spacing: -0.02em;
-}
-
-.period {
-  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.0;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .advantagesWrapper {
-  background-color: var(--bg-soft);
-  padding: 64px;
-  border-radius: 32px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
-  transition: var(--transition-smooth);
-}
-
-.advantagesWrapper:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  padding: 32px;
 }
 
 .listTitle {
-  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 40px;
-  color: var(--text-muted);
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
 }
 
 .list {
   list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .list li {
-  font-size: 1.125rem;
-  color: var(--text-main);
-  padding-left: 36px;
-  position: relative;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-secondary);
   line-height: 1.5;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
 }
 
 .list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
+  content: "";
   width: 12px;
   height: 1px;
-  background-color: var(--primary);
+  background-color: var(--color-accent);
+  margin-top: 11px;
+  flex-shrink: 0;
 }
 
 .right {
-  padding-top: 60px;
+  padding-top: 56px;
 }
 
 .bodyText {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
 }
 
 .description {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
 }
 
 .resultBox {
-  margin-top: 48px;
-  padding: 56px;
-  border-left: 1px solid var(--primary);
-  background-color: var(--bg-soft);
-  position: relative;
-}
-
-.resultBox::before {
-  content: "“";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-family: var(--font-headings);
-  font-size: 4rem;
-  color: var(--primary);
-  opacity: 0.1;
-  line-height: 1;
+  border-left: 3px solid var(--color-accent);
+  padding: 32px;
+  background-color: var(--color-accent-dim);
 }
 
 .resultText {
-  font-family: var(--font-headings);
-  font-size: 1.85rem;
-  line-height: 1.35;
-  color: var(--text-main);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
   margin: 0;
-  letter-spacing: -0.01em;
-  position: relative;
-  z-index: 2;
 }
 
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 40px;
-  }
   .mainContent {
     grid-template-columns: 1fr;
-    gap: 80px;
+    gap: 60px;
   }
   
   .right {
@@ -159,14 +118,6 @@
   }
   
   .advantagesWrapper {
-    padding: 40px;
-  }
-  
-  .description {
-    font-size: 1.125rem;
-  }
-  
-  .resultText {
-    font-size: 1.5rem;
+    padding: 24px;
   }
 }

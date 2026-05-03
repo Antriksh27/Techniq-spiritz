@@ -14,18 +14,19 @@ const Solution = () => {
   ];
 
   return (
-    <section className={styles.solution}>
+    <section className="section-spacing">
       <div className={styles.container}>
         <div className={styles.mainContent}>
           <div className={styles.left}>
-            <span className={styles.tagline}>THE SOLUTION</span>
-            <h2 className={styles.title}>Purpose-built for medical applications<span className={styles.period}>.</span></h2>
+            <div className="section-eyebrow">THE SOLUTION</div>
+            <h2 className={styles.title}>Purpose-built for medical applications</h2>
             
             <motion.div 
               className={styles.advantagesWrapper}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               <h4 className={styles.listTitle}>Practical advantages:</h4>
               <ul className={styles.list}>

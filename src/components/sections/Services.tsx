@@ -35,10 +35,11 @@ const portfolioItems = [
 
 const Services = () => {
   return (
-    <section id="services" className={styles.services}>
+    <section id="services" className="section-spacing">
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Our Medical Gas Systems<span className={styles.period}>.</span></h2>
+          <div className="section-eyebrow">EQUIPMENT PORTFOLIO</div>
+          <h2 className={styles.title}>Our Medical Gas Systems</h2>
           <p className={styles.introText}>
             Explore our smart solutions for medical gas pipeline system equipment for hospitals of every size and specialty.
           </p>
@@ -48,10 +49,10 @@ const Services = () => {
           {mainSystems.map((system, index) => (
             <motion.div 
               key={system.title}
-              className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              className="card-precision"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
               <div className={styles.imageWrapper}>
@@ -60,11 +61,11 @@ const Services = () => {
               <div className={styles.cardContent}>
                 <h3 className={styles.systemTitle}>{system.title}</h3>
                 <p className={styles.systemDescription}>{system.description}</p>
-                <ul className={styles.bullets}>
+                <div className={styles.bullets}>
                   {system.bullets.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
+                    <span key={i} className={styles.bulletTag}>{bullet}</span>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -80,7 +81,7 @@ const Services = () => {
             ))}
           </div>
           <div className={styles.viewAll}>
-            <a href="#products">View all products &rarr;</a>
+            <button className="btn btn-outline">View all products</button>
           </div>
         </div>
       </div>

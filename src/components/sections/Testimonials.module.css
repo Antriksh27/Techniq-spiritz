@@ -1,127 +1,113 @@
-.testimonials {
-  padding: 140px 0;
-  background-color: var(--bg-white);
-  position: relative;
-  overflow: hidden;
+.section {
+  background-color: #FFFFFF;
+  padding: 100px 0;
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0 40px;
 }
 
 .header {
-  margin-bottom: 80px;
+  margin-bottom: 64px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C84B2A;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-right: 12px;
 }
 
 .title {
-  font-family: var(--font-headings);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.15;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-
-.period {
-  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.05;
+  color: #1A1A1A;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 
 .card {
-  background-color: var(--bg-white);
-  padding: 64px;
-  border-radius: 32px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-left: 3px solid #C84B2A;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 60px;
-  transition: var(--transition-smooth);
-  border: 1px solid var(--border-light);
-  position: relative;
 }
 
-.card::before {
-  content: "“";
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  font-family: var(--font-headings);
-  font-size: 6rem;
-  color: var(--primary);
-  opacity: 0.05;
-  line-height: 1;
-}
-
-.card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
-  border-color: var(--primary);
-}
-
-.text {
-  font-family: var(--font-headings);
-  font-size: 1.85rem;
-  line-height: 1.4;
-  color: var(--text-main);
-  position: relative;
-  z-index: 2;
-  letter-spacing: -0.01em;
+.quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  color: #1A1A1A;
+  line-height: 1.75;
+  margin-bottom: 32px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
-.author {
-  font-family: var(--font-body);
+.name {
+  font-family: var(--font-heading);
+  font-size: 16px;
   font-weight: 700;
-  font-size: 0.95rem;
+  color: #1A1A1A;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-main);
+  letter-spacing: 0.02em;
 }
 
 .role {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
   font-weight: 500;
-}
-
-.institution {
-  font-size: 0.85rem;
-  color: var(--primary);
-  font-weight: 700;
+  color: #8A8A8A;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 4px;
+  letter-spacing: 0.05em;
 }
 
-@media (max-width: 1024px) {
+.hospital {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #8A8A8A;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 24px;
-  }
-  
-  .card {
-    padding: 40px;
-  }
-  
-  .text {
-    font-size: 1.5rem;
   }
 }

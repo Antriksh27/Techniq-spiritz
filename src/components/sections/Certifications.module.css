@@ -1,151 +1,157 @@
-.certifications {
-  padding: 160px 0;
-  background-color: var(--bg-white);
-  position: relative;
-  overflow: hidden;
+.section {
+  background-color: #F5F2EE;
+  padding: 100px 0;
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0 40px;
 }
 
 .header {
-  margin-bottom: 80px;
+  margin-bottom: 64px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C84B2A;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-right: 12px;
 }
 
 .title {
-  font-family: var(--font-headings);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.15;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-
-.period {
-  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.05;
+  color: #1A1A1A;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .group {
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
 
-.group:last-child {
-  margin-bottom: 0;
-}
-
-.groupTitle {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
+.mutedLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: #8A8A8A;
   text-transform: uppercase;
-  margin-bottom: 48px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.groupTitle::after {
-  content: "";
-  height: 1px;
-  flex-grow: 1;
-  background: var(--border-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  display: block;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
-.card {
-  padding: 48px;
-  background-color: var(--bg-soft);
-  border: 1px solid var(--border-light);
-  border-radius: 24px;
+.credentialCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.10);
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.marker {
+  width: 22px;
+  height: 22px;
+  background-color: #C84B2A;
+  flex-shrink: 0;
+}
+
+.cardContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: var(--transition-smooth);
-}
-
-.card:hover {
-  background-color: var(--bg-white);
-  border-color: var(--primary);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
 }
 
 .cardTitle {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-family: var(--font-heading);
+  font-size: 16px;
   font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .cardDescription {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #4A4A4A;
   line-height: 1.6;
 }
 
-.standardsGrid {
+.divider {
+  height: 1px;
+  background-color: rgba(0,0,0,0.08);
+  margin: 40px 0;
+}
+
+.standardsRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  gap: 24px;
 }
 
 .standardCard {
-  border-left: 1px solid var(--primary);
-  padding: 8px 0 8px 32px;
-  transition: var(--transition-smooth);
-}
-
-.standardCard:hover {
-  padding-left: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-top: 2px solid #C84B2A;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .standardTitle {
-  font-family: var(--font-headings);
-  font-size: 1.75rem;
-  color: var(--text-main);
-  margin-bottom: 16px;
-  letter-spacing: -0.01em;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: #C84B2A;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .standardDescription {
-  font-size: 1.05rem;
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #4A4A4A;
   line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
-  .grid {
+  .grid, .standardsRow {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .standardsGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  
-  .grid {
+  .grid, .standardsRow {
     grid-template-columns: 1fr;
   }
   
-  .card {
-    padding: 32px;
+  .container {
+    padding: 0 24px;
   }
 }

@@ -48,44 +48,56 @@ const standards = [
 
 const Certifications = () => {
   return (
-    <section className={styles.certifications}>
+    <section className={styles.section} id="credentials">
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Certifications & Standards<span className={styles.period}>.</span></h2>
-        </div>
+        <motion.div 
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className={styles.eyebrow}>Credentials</div>
+          <h2 className={styles.title}>Certifications & Standards</h2>
+        </motion.div>
 
         <div className={styles.group}>
-          <h3 className={styles.groupTitle}>Company Credentials:</h3>
+          <span className={styles.mutedLabel}>Company Credentials:</span>
           <div className={styles.grid}>
-            {credentials.map((item, index) => (
+            {credentials.map((item, idx) => (
               <motion.div 
-                key={item.title}
-                className={styles.card}
+                key={idx}
+                className={styles.credentialCard}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
-                <h4 className={styles.cardTitle}>{item.title}</h4>
-                <p className={styles.cardDescription}>{item.description}</p>
+                <div className={styles.marker}></div>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                  <p className={styles.cardDescription}>{item.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
 
+        <div className={styles.divider}></div>
+
         <div className={styles.group}>
-          <h3 className={styles.groupTitle}>Products Designed with Reference to Recognized Standards:</h3>
-          <div className={styles.standardsGrid}>
-            {standards.map((item, index) => (
+          <span className={styles.mutedLabel}>Products Designed with Reference to Recognized Standards:</span>
+          <div className={styles.standardsRow}>
+            {standards.map((item, idx) => (
               <motion.div 
-                key={item.title}
+                key={idx}
                 className={styles.standardCard}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <h4 className={styles.standardTitle}>{item.title}</h4>
+                <h3 className={styles.standardTitle}>{item.title}</h3>
                 <p className={styles.standardDescription}>{item.description}</p>
               </motion.div>
             ))}

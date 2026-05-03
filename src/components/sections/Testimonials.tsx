@@ -6,42 +6,49 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    text: "We embarked on a new hospital project. By now, Siddharth had the total confidence of the Board — and the next purchase order was issued without considering any other alternative.",
-    author: "Mr. Kandarp Mankad",
+    quote: "We embarked on a new hospital project. By now, Siddharth had the total confidence of the Board — and the next purchase order was issued without considering any other alternative.",
+    name: "Mr. Kandarp Mankad",
     role: "Executive Director",
-    institution: "Gokulam Hospital (Gokulam Lifescience Pvt. Ltd.), Rajkot"
+    hospital: "Gokulam Hospital (Gokulam Lifescience Pvt. Ltd.), Rajkot"
   },
   {
-    text: "We replaced our 10-year-old traditional oil-free air compressor system with the integrex Medical Air Generator. Our decision was made confidently in a single meeting. The system is incredibly compact, with minimal noise and vibration — creating a more peaceful environment in our Level 3 NICU.",
-    author: "Dr. Vaibhav Patel",
+    quote: "We replaced our 10-year-old traditional oil-free air compressor system with the integrex Medical Air Generator. Our decision was made confidently in a single meeting. The system is incredibly compact, with minimal noise and vibration — creating a more peaceful environment in our Level 3 NICU.",
+    name: "Dr. Vaibhav Patel",
     role: "MD Pediatrics, IAP Fellow in Neonatology",
-    institution: "Hasya New Born Care Center, Palanpur"
+    hospital: "Hasya New Born Care Center, Palanpur"
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section className={styles.testimonials}>
+    <section className={styles.section} id="testimonials">
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>What our clients say<span className={styles.period}>.</span></h2>
-        </div>
+        <motion.div 
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className={styles.eyebrow}>Client Testimonials</div>
+          <h2 className={styles.title}>What Our Clients Say</h2>
+        </motion.div>
 
         <div className={styles.grid}>
-          {testimonials.map((t, index) => (
+          {testimonials.map((t, idx) => (
             <motion.div 
-              key={index} 
+              key={idx}
               className={styles.card}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <p className={styles.text}>"{t.text}"</p>
+              <p className={styles.quote}>{t.quote}</p>
               <div className={styles.footer}>
-                <span className={styles.author}>{t.author}</span>
+                <span className={styles.name}>{t.name}</span>
                 <span className={styles.role}>{t.role}</span>
-                <span className={styles.institution}>{t.institution}</span>
+                <span className={styles.hospital}>{t.hospital}</span>
               </div>
             </motion.div>
           ))}
