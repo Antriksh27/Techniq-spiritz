@@ -22,7 +22,7 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} treatment-c`}>
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -39,8 +39,9 @@ const ProblemSolution = () => {
         </motion.div>
 
         <div className={styles.grid}>
+          <div className={styles.dividerDot}></div>
           <motion.div 
-            className={styles.column}
+            className={`${styles.column} ${styles.problemColumn}`}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -54,7 +55,8 @@ const ProblemSolution = () => {
             <div className={styles.mutedLabel}>The consequences show up quietly, every day, for years:</div>
             <ul className={styles.list}>
               {problems.map((item, i) => (
-                <li key={i} className={`${styles.listItem} ${styles.problemBullet}`}>
+                <li key={i} className={styles.listItem}>
+                  <span className={styles.bullet}></span>
                   {item}
                 </li>
               ))}
@@ -62,7 +64,7 @@ const ProblemSolution = () => {
           </motion.div>
 
           <motion.div 
-            className={styles.column}
+            className={`${styles.column} ${styles.solutionColumn}`}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -76,7 +78,8 @@ const ProblemSolution = () => {
             <div className={styles.mutedLabel}>This translates into practical advantages:</div>
             <ul className={styles.list}>
               {solutions.map((item, i) => (
-                <li key={i} className={`${styles.listItem} ${styles.solutionBullet}`}>
+                <li key={i} className={styles.listItem}>
+                  <span className={styles.bullet}></span>
                   {item}
                 </li>
               ))}
@@ -85,7 +88,7 @@ const ProblemSolution = () => {
         </div>
 
         <motion.div 
-          className={styles.calloutBar}
+          className={`${styles.calloutBar} callout-pattern`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

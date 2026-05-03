@@ -1,5 +1,4 @@
 .section {
-  background-color: #FFFFFF;
   padding: 100px 0;
 }
 
@@ -56,39 +55,38 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 1px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background-color: rgba(0,0,0,0.08); /* This acts as internal border lines */
 }
 
 .card {
   background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.10);
-  padding: 24px 20px;
+  padding: 40px 32px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 6px;
+  height: 6px;
+  background-color: #C84B2A;
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   color: #1A1A1A;
   text-transform: uppercase;
   margin-bottom: 16px;
   line-height: 1.2;
-  position: relative;
-  padding-left: 18px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.cardTitle::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 6px;
-  height: 6px;
-  background-color: #C84B2A;
+  margin-top: 12px; /* Space for the accent mark */
 }
 
 .cardDescription {

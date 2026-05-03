@@ -10,7 +10,7 @@ const PortfolioBar = () => {
   ];
 
   return (
-    <div className={styles.portfolioBar}>
+    <div className={`${styles.portfolioBar} treatment-c stat-bar-accent`}>
       <div className={`${styles.container} container`}>
         <div className={styles.label}>ALSO IN OUR PORTFOLIO:</div>
         <div className={styles.items}>

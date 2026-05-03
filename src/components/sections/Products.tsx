@@ -75,19 +75,6 @@ const Products = () => {
           ))}
         </div>
 
-        <div className={styles.footerDivider}></div>
-        <div className={styles.portfolioRow}>
-          <div className={styles.portfolioLeft}>
-            <span className={styles.portfolioLabel}>Also in our portfolio:</span>
-            <div className={styles.portfolioLinks}>
-              Medical Vacuum Pump System — Reciprocating <span>&middot;</span>
-              Medical Oxygen Generator (PSA) <span>&middot;</span>
-              Medical Ventilator Air Compressor <span>&middot;</span>
-              MGPS Design Services
-            </div>
-          </div>
-          <a href="#products" className={styles.viewAllBottom}>View all products &rarr;</a>
-        </div>
       </div>
     </section>
   );

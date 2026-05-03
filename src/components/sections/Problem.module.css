@@ -1,12 +1,15 @@
 .section {
-  background-color: #EDEAE5;
   padding: 100px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -57,25 +60,45 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 0;
   position: relative;
   margin-bottom: 80px;
 }
 
-.grid::after {
-  content: "";
+.dividerDot {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 1px;
-  background-color: rgba(0,0,0,0.08);
+  border-left: 1px dashed rgba(0,0,0,0.15);
   transform: translateX(-50%);
+  z-index: 2;
+}
+
+.dividerDot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #C84B2A;
+  transform: translateY(-50%);
 }
 
 .column {
   display: flex;
   flex-direction: column;
+  padding: 32px;
+}
+
+.problemColumn {
+  background: rgba(200,75,42,0.03);
+}
+
+.solutionColumn {
+  background: rgba(0,0,0,0.02);
 }
 
 .cardLabel {
@@ -129,30 +152,29 @@
   color: #4A4A4A;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding-left: 20px;
-  position: relative;
+  display: flex;
+  align-items: center;
   line-height: 1.5;
 }
 
-.problemBullet::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
+.bullet {
+  display: inline-block;
   width: 6px;
   height: 6px;
-  background-color: #C84B2A;
-}
-
-.solutionBullet::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: #C84B2A;
+  background: #C84B2A;
+  margin-right: 10px;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .calloutBar {
-  background-color: #FFFFFF;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(200,75,42,0.04) 0px,
+    rgba(200,75,42,0.04) 1px,
+    transparent 1px,
+    transparent 28px
+  );
   border-top: 1px solid rgba(0,0,0,0.08);
   border-bottom: 1px solid rgba(0,0,0,0.08);
   border-left: 3px solid #C84B2A;
@@ -170,16 +192,26 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 80px;
+    gap: 40px;
   }
   
-  .grid::after {
+  .dividerDot {
     display: none;
+  }
+  
+  .sectionNumber {
+    font-size: 80px;
+    top: 20px;
+    right: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 24px;
+  }
+  
+  .column {
+    padding: 24px;
   }
 }

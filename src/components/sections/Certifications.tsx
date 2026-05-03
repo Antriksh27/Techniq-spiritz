@@ -48,7 +48,7 @@ const standards = [
 
 const Certifications = () => {
   return (
-    <section className={styles.section} id="credentials">
+    <section className={`${styles.section} treatment-a`} id="credentials">
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -62,7 +62,10 @@ const Certifications = () => {
         </motion.div>
 
         <div className={styles.group}>
-          <span className={styles.mutedLabel}>Company Credentials:</span>
+          <div className={styles.labelContainer}>
+            <span className={styles.mutedLabel}>Company Credentials</span>
+            <div className={styles.labelRule}></div>
+          </div>
           <div className={styles.grid}>
             {credentials.map((item, idx) => (
               <motion.div 
@@ -83,24 +86,24 @@ const Certifications = () => {
           </div>
         </div>
 
-        <div className={styles.divider}></div>
-
-        <div className={styles.group}>
-          <span className={styles.mutedLabel}>Products Designed with Reference to Recognized Standards:</span>
-          <div className={styles.standardsRow}>
-            {standards.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                className={styles.standardCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                <h3 className={styles.standardTitle}>{item.title}</h3>
-                <p className={styles.standardDescription}>{item.description}</p>
-              </motion.div>
-            ))}
+        <div className={`${styles.standardsSection} treatment-c`}>
+          <div className={styles.standardsContent}>
+            <span className={styles.mutedLabel}>Products Designed with Reference to Recognized Standards:</span>
+            <div className={styles.standardsRow}>
+              {standards.map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  className={styles.standardCard}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <h3 className={styles.standardTitle}>{item.title}</h3>
+                  <p className={styles.standardDescription}>{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ const mainSystems = [
 ];
 
 const portfolioItems = [
-  "Medical Vacuum Pump System — Reciprocating",
+  "Medical Vacuum Pump — Reciprocating",
   "Medical Oxygen Generator (PSA)",
   "Medical Ventilator Air Compressor",
   "MGPS Design Services"
@@ -35,7 +35,7 @@ const portfolioItems = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-spacing">
+    <section id="services" className="section-spacing treatment-a">
       <div className={styles.container}>
         <div className={styles.header}>
           <div className="section-eyebrow">EQUIPMENT PORTFOLIO</div>
@@ -44,6 +44,8 @@ const Services = () => {
             Explore our smart solutions for medical gas pipeline system equipment for hospitals of every size and specialty.
           </p>
         </div>
+
+        <div className={styles.headerRule}></div>
 
         <div className={styles.mainGrid}>
           {mainSystems.map((system, index) => (
@@ -55,7 +57,7 @@ const Services = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className={styles.imageWrapper}>
+              <div className={`${styles.imageWrapper} product-card-pattern`}>
                 <Image src={system.image} alt={system.title} fill className={styles.productImage} />
               </div>
               <div className={styles.cardContent}>
@@ -71,19 +73,26 @@ const Services = () => {
           ))}
         </div>
 
-        <div className={styles.portfolioSection}>
-          <h4 className={styles.portfolioTitle}>ALSO IN OUR PORTFOLIO</h4>
-          <div className={styles.portfolioGrid}>
-            {portfolioItems.map((item, index) => (
-              <div key={index} className={styles.portfolioItem}>
-                <span>{item}</span>
+        <div className={`${styles.portfolioSection} treatment-c`}>
+          <div className={styles.portfolioContent}>
+            <div className={styles.portfolioLabelLine}>
+              <span className={styles.portfolioLabel}>ALSO IN OUR PORTFOLIO</span>
+            </div>
+            <div className={styles.portfolioItemsLine}>
+              <div className={styles.portfolioGrid}>
+                {portfolioItems.map((item, index) => (
+                  <div key={index} className={styles.portfolioItem}>
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className={styles.viewAll}>
-            <button className="btn btn-outline">View all products</button>
+            </div>
+            <div className={styles.portfolioViewAllLine}>
+              <button className={styles.viewAllBtn}>View all products →</button>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   );

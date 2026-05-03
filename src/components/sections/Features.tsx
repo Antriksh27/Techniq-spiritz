@@ -49,7 +49,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} treatment-a`}>
       <div className={styles.container}>
         <motion.div 
           className={styles.header}

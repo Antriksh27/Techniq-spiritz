@@ -1,17 +1,18 @@
 .portfolioBar {
-  background-color: var(--primary);
-  min-height: 56px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   z-index: 10;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .container {
-  max-width: var(--container-max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,52 +20,52 @@
 }
 
 .label {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-label);
+  letter-spacing: 0.18em;
   white-space: nowrap;
-  opacity: 0.6;
   text-transform: uppercase;
 }
 
 .items {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   flex: 1;
   justify-content: center;
 }
 
 .item {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: 12px;
   white-space: nowrap;
-  transition: var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .item::before {
   content: '';
   width: 4px;
   height: 4px;
-  background: #FFFFFF;
-  border-radius: 50%;
+  background: var(--color-accent);
+  border-radius: 0;
   opacity: 0.4;
 }
 
 .viewAll {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-accent);
   text-decoration: none;
-  transition: var(--transition-fast);
-  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   display: flex;
   align-items: center;
   gap: 8px;

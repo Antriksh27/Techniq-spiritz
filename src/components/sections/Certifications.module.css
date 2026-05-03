@@ -1,5 +1,4 @@
 .section {
-  background-color: #F5F2EE;
   padding: 100px 0;
 }
 
@@ -103,10 +102,25 @@
   line-height: 1.6;
 }
 
-.divider {
+.labelContainer {
+  margin-bottom: 24px;
+}
+
+.labelRule {
   height: 1px;
   background-color: rgba(0,0,0,0.08);
-  margin: 40px 0;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.standardsSection {
+  padding: 64px 40px;
+  margin: 64px -40px 0;
+}
+
+.standardsContent {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .standardsRow {

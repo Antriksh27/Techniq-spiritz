@@ -21,7 +21,7 @@ const subCards = [
 
 const CTA = () => {
   return (
-    <section className={styles.section} id="contact">
+    <section className={`${styles.section} treatment-c`} id="contact">
       <div className={styles.container}>
         <div className={styles.grid}>
           <motion.div 

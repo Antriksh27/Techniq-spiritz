@@ -54,11 +54,12 @@
 
 .systemTitle {
   font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .systemDescription {
@@ -86,48 +87,94 @@
   color: var(--color-accent);
 }
 
-.portfolioSection {
-  border-top: 1px solid var(--color-rule);
-  padding-top: 64px;
+.headerRule {
+  height: 1px;
+  background-color: rgba(0,0,0,0.08);
+  width: 100%;
+  margin-bottom: 64px;
 }
 
-.portfolioTitle {
+.portfolioSection {
+  padding: 16px 40px;
+  margin: 0 -40px; /* Offset container padding to be full-width relative to container content */
+}
+
+.portfolioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolioLabelLine {
+  width: 100%;
+}
+
+.portfolioLabel {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
   color: var(--color-text-label);
-  margin-bottom: 48px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 20px;
 }
 
-.portfolioTitle::after {
-  content: "";
-  height: 1px;
-  flex-grow: 1;
-  background: var(--color-rule);
+.portfolioItemsLine {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .portfolioGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 48px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .portfolioItem {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--color-rule);
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--color-text-primary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
-.viewAll {
-  margin-top: 80px;
+.portfolioItem::before {
+  content: "·";
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.portfolioItem:first-child::before {
+  display: none;
+}
+
+.portfolioViewAllLine {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.viewAllBtn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {

@@ -33,7 +33,7 @@ const audiences = [
 
 const Audience = () => {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} treatment-c`}>
       <div className={styles.container}>
         <motion.div 
           className={styles.header}

@@ -21,7 +21,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className={styles.section} id="testimonials">
+    <section className={`${styles.section} treatment-d`} id="testimonials">
       <div className={styles.container}>
         <motion.div 
           className={styles.header}

@@ -225,3 +225,61 @@ img {
 .text-muted { color: var(--color-text-muted); }
 .bg-surface { background-color: var(--color-surface); }
 .bg-card { background-color: var(--color-card); }
+
+/* BACKGROUND TREATMENTS */
+.treatment-a {
+  background-color: #F5F2EE;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.treatment-b {
+  background-color: #F5F2EE;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 200px 200px, 48px 48px, 48px 48px;
+  background-repeat: repeat;
+}
+
+.treatment-c {
+  background-color: #EAE6E0;
+}
+
+.treatment-d {
+  background-color: #FFFFFF;
+}
+
+.footer-texture {
+  background-color: #1A1A1A;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* PRODUCT CARD INNER TEXTURE (Diagonal Rule) */
+.product-card-pattern {
+  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.012) 0px, rgba(0,0,0,0.012) 1px, transparent 1px, transparent 8px);
+}
+
+/* CALLOUT BAR TEXTURE (Vertical Rule) */
+.callout-pattern {
+  background: repeating-linear-gradient(90deg, rgba(200,75,42,0.03) 0px, rgba(200,75,42,0.03) 1px, transparent 1px, transparent 24px);
+}
+
+/* STAT BAR ACCENT STRIP */
+.stat-bar-accent {
+  position: relative;
+}
+
+.stat-bar-accent::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #C84B2A;
+}

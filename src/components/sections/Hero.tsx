@@ -7,7 +7,8 @@ import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} treatment-b`}>
+      <div className={styles.watermark}>TS</div>
       <div className={styles.container}>
         <motion.div 
           className={styles.content}

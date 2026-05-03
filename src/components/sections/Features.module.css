@@ -1,5 +1,4 @@
 .section {
-  background-color: #F5F2EE;
 }
 
 .container {
@@ -59,14 +58,20 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 16px;
 }
 
 .featureItem {
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: background 0.15s ease;
+  background-color: transparent;
+}
+
+.featureItem:hover {
+  background-color: #FFFFFF;
 }
 
 .featureNumber {
