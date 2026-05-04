@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 interface TechniqButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
     variant?: "default" | "outline" | "secondary" | "ghost";
+    size?: "default" | "sm" | "lg" | "icon";
     className?: string;
 }
 
@@ -12,18 +13,21 @@ export function GetStartedButton({
     className,
     children,
     variant = "default",
+    size = "default",
     ...props
 }: TechniqButtonProps) {
     const isOutline = variant === "outline";
+    const isSmall = size === "sm";
     
     return (
         <Button
-            style={{ 
+            size={size}
+            style={size === "default" ? { 
               paddingLeft: '64px', 
               paddingRight: '64px', 
               height: '52px',
               minWidth: 'fit-content'
-            }}
+            } : {}}
             className={cn(
                 "relative overflow-hidden rounded-md transition-all duration-300 border-none inline-flex items-center justify-center",
                 "hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]",
@@ -53,4 +57,4 @@ export function GetStartedButton({
     );
 }
 
-export { GetStartedButton }
+

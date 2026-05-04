@@ -44,7 +44,7 @@ const Navbar = () => {
   const resourcesData = ['Blogs', 'Medical Gas Unit Convertors', 'Press & Media'];
 
   // Spring config for a "liquid" premium feel
-  const springConfig = { type: 'spring', stiffness: 200, damping: 30, mass: 0.8 };
+  const springConfig = { type: 'spring' as const, stiffness: 200, damping: 30, mass: 0.8 };
 
   return (
     <>
