@@ -20,11 +20,11 @@
 }
 
 .label {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-text-label);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   white-space: nowrap;
   text-transform: uppercase;
 }
@@ -37,16 +37,16 @@
 }
 
 .item {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: 12px;
   white-space: nowrap;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .item::before {
@@ -59,8 +59,8 @@
 }
 
 .viewAll {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-accent);
   text-decoration: none;

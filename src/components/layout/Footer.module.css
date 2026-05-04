@@ -23,20 +23,22 @@
 
 .logoName {
   font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 400;
   color: #FFFFFF;
   text-transform: uppercase;
   margin-bottom: 4px;
+  letter-spacing: 0.04em;
 }
 
 .logoSub {
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 11px;
   color: rgba(255,255,255,0.4);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .brandDescription {
@@ -49,12 +51,12 @@
 }
 
 .columnLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 700;
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   margin-bottom: 24px;
 }
 
@@ -65,8 +67,8 @@
 }
 
 .link {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 14px;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -84,28 +86,31 @@
 }
 
 .locationLabel {
-  font-family: var(--font-mono);
-  font-size: 9px;
+  font-family: var(--font-accent);
+  font-size: 10px;
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .contactEmail, .contactPhone {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
 }
 
 .whatsappLink {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 700;
   color: #C84B2A;
   text-decoration: none;
   margin-top: 8px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .socialRow {
@@ -115,11 +120,13 @@
 }
 
 .socialLink {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   color: rgba(255,255,255,0.4);
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .socialLink:hover {

@@ -1,5 +1,6 @@
 .section {
-  padding: 100px 0;
+  padding: 0;
+  background-color: #FFFFFF;
 }
 
 .container {
@@ -15,6 +16,12 @@
   margin-bottom: 64px;
 }
 
+.header {
+  padding-top: var(--section-padding);
+  margin-bottom: 64px;
+  max-width: 800px;
+}
+
 .headerLeft {
   max-width: 600px;
 }
@@ -22,10 +29,10 @@
 .eyebrow {
   display: flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #C84B2A;
   margin-bottom: 16px;
@@ -42,12 +49,13 @@
 
 .h2 {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: #1A1A1A;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   margin-bottom: 16px;
 }
 
@@ -59,12 +67,13 @@
 }
 
 .viewAllTop {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   color: #8A8A8A;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  font-weight: 600;
   transition: color 0.2s ease;
   margin-bottom: 8px;
 }
@@ -76,42 +85,38 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 64px;
+  gap: 20px;
+  padding-bottom: 0;
 }
 
 .card {
   background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-top: 2px solid #C84B2A;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-top: 3px solid #C84B2A;
+  border-radius: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-.topLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  color: #C84B2A;
-  padding: 16px 20px 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .imageWrapper {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
-  background-color: #F0F2F5;
+  background-color: #F8F9FA;
+  padding: 40px;
 }
 
 .productImage {
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .cardContent {
-  padding: 24px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -119,12 +124,13 @@
 
 .productName {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.1;
   color: #1A1A1A;
-  margin-bottom: 16px;
-  font-weight: 700;
+  margin-bottom: 12px;
+  font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .description {
@@ -132,7 +138,7 @@
   font-size: 14px;
   color: #4A4A4A;
   line-height: 1.6;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   flex-grow: 1;
 }
 
@@ -140,37 +146,41 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .tag {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 500;
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 600;
   background-color: rgba(200,75,42,0.08);
   color: #C84B2A;
-  padding: 3px 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.learnMore {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  color: #C84B2A;
-  text-decoration: none;
+  padding: 4px 10px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.footerDivider {
-  height: 1px;
-  background-color: rgba(0,0,0,0.10);
-  margin-bottom: 24px;
+.learnMore {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 700;
+  color: #C84B2A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: auto;
+}
+
+.portfolioWrapper {
+  background-color: #F8F6F2;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-top: 100px;
+  width: 100%;
 }
 
 .portfolioRow {
+  padding: 32px 64px; /* Increased side padding for full-width look */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -179,66 +189,118 @@
 .portfolioLeft {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 64px; /* More space between label and list */
 }
 
 .portfolioLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 700;
   color: #8A8A8A;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
 }
 
-.portfolioLinks {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #4A4A4A;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.portfolioList {
   display: flex;
-  gap: 8px;
+  gap: 48px; /* Even more space between items */
+  align-items: center;
 }
 
-.portfolioLinks span {
-  color: #8A8A8A;
+.portfolioItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.portfolioDot {
+  width: 4px;
+  height: 4px;
+  background-color: #C84B2A;
+  border-radius: 50%;
 }
 
 .viewAllBottom {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 12px;
   color: #C84B2A;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  border-bottom: 2px solid #C84B2A;
+  padding-bottom: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.viewAllBottom:hover {
+  color: #1A1A1A;
+  border-bottom-color: #1A1A1A;
+}
+
+@media (max-width: 1400px) {
+  .portfolioRow {
+    padding: 32px 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .portfolioLeft {
+    gap: 32px;
+  }
+  
+  .portfolioList {
+    gap: 24px;
+  }
+
+  .portfolioItem {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .portfolioRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 40px;
+  }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
-  
-  .headerRow {
+
+  .portfolioRow {
+    padding: 32px 24px;
+  }
+
+  .portfolioLeft {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
   }
 
-  .portfolioRow {
+  .portfolioList {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-  }
-  
-  .portfolioLeft {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 12px;
   }
 }

@@ -19,10 +19,13 @@
 }
 
 .title {
-  font-family: var(--font-headings);
-  font-size: clamp(4rem, 12vw, 8rem);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 6rem);
   color: #FFFFFF;
   margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 .description {

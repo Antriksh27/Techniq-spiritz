@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Problem.module.css';
+import PipeSchematicBackgroundDark from '@/components/ui/PipeSchematicBackgroundDark';
 
 const ProblemSolution = () => {
   const problems = [
@@ -22,7 +23,8 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section className={`${styles.section} treatment-c`}>
+    <section className={styles.section}>
+      <PipeSchematicBackgroundDark />
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -39,7 +41,6 @@ const ProblemSolution = () => {
         </motion.div>
 
         <div className={styles.grid}>
-          <div className={styles.dividerDot}></div>
           <motion.div 
             className={`${styles.column} ${styles.problemColumn}`}
             initial={{ opacity: 0, x: -20 }}
@@ -88,12 +89,13 @@ const ProblemSolution = () => {
         </div>
 
         <motion.div 
-          className={`${styles.calloutBar} callout-pattern`}
+          className={styles.calloutBar}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
+          <span className={styles.quoteMark}>&#8220;</span>
           <p className={styles.calloutText}>
             The result is medical gas equipment that fits how hospitals are planned, how they are built, and how they are run — not equipment that hospitals have to plan around.
           </p>

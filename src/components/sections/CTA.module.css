@@ -1,6 +1,6 @@
 .section {
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 100px 0;
+  padding: var(--section-padding) 0;
 }
 
 .container {
@@ -24,13 +24,13 @@
 .eyebrow {
   display: flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #C84B2A;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .eyebrow::before {
@@ -44,12 +44,13 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.05;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: #1A1A1A;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   margin-bottom: 24px;
 }
 
@@ -77,12 +78,13 @@
 
 .subCardTitle {
   font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 400;
   color: #1A1A1A;
   text-transform: uppercase;
   margin-bottom: 8px;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
 }
 
 .subCardBody {
@@ -104,14 +106,14 @@
   color: #FFFFFF;
   border: none;
   padding: 18px 32px;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btnPrimary:hover {
@@ -123,14 +125,14 @@
   color: #4A4A4A;
   border: 1px solid rgba(0,0,0,0.20);
   padding: 18px 32px;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
   text-align: center;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btnSecondary:hover {

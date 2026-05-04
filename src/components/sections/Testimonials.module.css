@@ -1,27 +1,32 @@
 .section {
-  padding: 100px 0;
+  padding: 100px 0 120px;
+  background-color: #F5F2EE;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #C84B2A;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .eyebrow::before {
@@ -35,27 +40,50 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.05;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: #1A1A1A;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 0; /* Gap 0 to manage vertical divider manually */
 }
 
 .card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-left: 3px solid #C84B2A;
-  padding: 28px;
+  background: transparent;
+  border: none;
+  border-top: 2px solid #C84B2A;
+  padding: 36px 48px 36px 0;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.card:first-child {
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+
+.card:last-child {
+  padding-left: 48px;
+  padding-right: 0;
+}
+
+.quoteMark {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 80px;
+  color: #C84B2A;
+  line-height: 0.8;
+  display: block;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
 }
 
 .quote {
@@ -63,45 +91,67 @@
   font-style: italic;
   font-size: 16px;
   color: #1A1A1A;
-  line-height: 1.75;
-  margin-bottom: 32px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.attributionRule {
+  width: 40px;
+  height: 1px;
+  background: rgba(0,0,0,0.2);
+  margin-bottom: 16px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-top: auto;
 }
 
 .name {
   font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 18px;
   color: #1A1A1A;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
 }
 
-.role {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
+.role, .hospital {
+  font-family: var(--font-accent);
+  font-size: 12px;
   color: #8A8A8A;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
-.hospital {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #8A8A8A;
-  letter-spacing: 0.02em;
+.dividerWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+  }
+  
+  .card {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .card:last-child {
+    padding-left: 0;
+    border-bottom: none;
   }
 }
 

@@ -28,7 +28,7 @@ const Solution = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className={styles.listTitle}>Practical advantages:</h4>
+              <h3 className={styles.listTitle}>Practical advantages:</h3>
               <ul className={styles.list}>
                 {advantages.map((item, i) => (
                   <li key={i}>{item}</li>

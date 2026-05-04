@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './CTA.module.css';
+import { GetStartedButton } from '@/components/ui/get-started-button';
 
 const subCards = [
   {
@@ -54,8 +55,10 @@ const CTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <button className={styles.btnPrimary}>Discuss Your Project &rarr;</button>
-            <button className={styles.btnSecondary}>Explore Products</button>
+            <div className="flex flex-col gap-4">
+              <GetStartedButton>Discuss Your Project</GetStartedButton>
+              <GetStartedButton variant="secondary">Explore Products</GetStartedButton>
+            </div>
           </motion.div>
         </div>
       </div>

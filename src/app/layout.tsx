@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
+import { Bebas_Neue, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 
-const barlowCondensed = Barlow_Condensed({
-  weight: ["700", "800"],
+const bebasNeue = Bebas_Neue({
+  weight: ["400"],
   variable: "--font-heading",
   subsets: ["latin"],
   display: 'swap',
 });
 
-const sourceSerif4 = Source_Serif_4({
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-body",
+const montserrat = Montserrat({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-accent",
   subsets: ["latin"],
   display: 'swap',
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  variable: "--font-mono",
+const inter = Inter({
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
   subsets: ["latin"],
   display: 'swap',
 });
@@ -61,7 +60,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${barlowCondensed.variable} ${sourceSerif4.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

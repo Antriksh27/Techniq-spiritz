@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Audience.module.css';
+import PipeSchematicBackgroundDark from '@/components/ui/PipeSchematicBackgroundDark';
 
 const audiences = [
   {
@@ -33,7 +34,8 @@ const audiences = [
 
 const Audience = () => {
   return (
-    <section className={`${styles.section} treatment-c`}>
+    <section className={styles.section}>
+      <PipeSchematicBackgroundDark />
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -59,6 +61,7 @@ const Audience = () => {
               transition={{ delay: index * 0.05, duration: 0.5 }}
               viewport={{ once: true }}
             >
+              <div className={styles.accentMark}></div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDescription}>{item.description}</p>
             </motion.div>

@@ -10,11 +10,13 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: var(--color-text-primary);
   margin-bottom: 16px;
   text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 .introText {
@@ -54,12 +56,12 @@
 
 .systemTitle {
   font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 400;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  line-height: 1.0;
+  letter-spacing: 0.04em;
 }
 
 .systemDescription {
@@ -77,14 +79,15 @@
 }
 
 .bulletTag {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 4px 8px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
   background-color: var(--color-accent-dim);
   border: 1px solid var(--color-border);
   color: var(--color-accent);
+  font-weight: 600;
 }
 
 .headerRule {
@@ -112,11 +115,11 @@
 }
 
 .portfolioLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-text-label);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -135,15 +138,15 @@
 
 .portfolioItem {
   font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   color: var(--color-text-primary);
   white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .portfolioItem::before {
@@ -164,8 +167,8 @@
 }
 
 .viewAllBtn {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-accent);
   background: none;

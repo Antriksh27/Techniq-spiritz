@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Testimonials.module.css';
+import PipeSchematicBackground from '@/components/ui/PipeSchematicBackground';
+import SectionDivider from '@/components/SectionDivider';
 
 const testimonials = [
   {
@@ -21,7 +23,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className={`${styles.section} treatment-d`} id="testimonials">
+    <section className={styles.section} id="testimonials">
+      <PipeSchematicBackground color="#C84B2A" opacity={0.05} />
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -44,7 +47,9 @@ const Testimonials = () => {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
+              <span className={styles.quoteMark}>“</span>
               <p className={styles.quote}>{t.quote}</p>
+              <div className={styles.attributionRule}></div>
               <div className={styles.footer}>
                 <span className={styles.name}>{t.name}</span>
                 <span className={styles.role}>{t.role}</span>
@@ -53,6 +58,16 @@ const Testimonials = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      {/* Integrated Divider to prevent schematic cut-off */}
+      <div className={styles.dividerWrapper}>
+        <SectionDivider 
+          fromColor="transparent" 
+          toColor="#EAE6E0" 
+          direction="down" 
+          height={100} 
+        />
       </div>
     </section>
   );

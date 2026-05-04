@@ -17,8 +17,9 @@ const config: Config = {
         border: 'var(--border-light)',
       },
       fontFamily: {
-        serif: ['var(--font-serif)', 'serif'],
-        sans: ['var(--font-sans)', 'sans-serif'],
+        heading: ['var(--font-heading)', 'sans-serif'],
+        body: ['var(--font-body)', 'sans-serif'],
+        accent: ['var(--font-accent)', 'sans-serif'],
       },
     },
   },

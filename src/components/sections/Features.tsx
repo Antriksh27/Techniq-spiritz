@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Features.module.css';
+import PipeSchematicBackground from '@/components/ui/PipeSchematicBackground';
+import SectionDivider from '@/components/SectionDivider';
 
 const features = [
   {
@@ -49,7 +51,8 @@ const features = [
 
 const Features = () => {
   return (
-    <section className={`${styles.section} treatment-a`}>
+    <section className={styles.section}>
+      <PipeSchematicBackground />
       <div className={styles.container}>
         <motion.div 
           className={styles.header}
@@ -85,6 +88,16 @@ const Features = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Integrated Divider to prevent schematic cut-off */}
+      <div className={styles.dividerWrapper}>
+        <SectionDivider 
+          fromColor="transparent" 
+          toColor="#1C2B3A" 
+          direction="down" 
+          height={100} 
+        />
       </div>
     </section>
   );

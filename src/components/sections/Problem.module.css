@@ -1,7 +1,8 @@
 .section {
-  padding: 100px 0;
+  padding: 0; /* Handled by SectionDivider components */
   position: relative;
   overflow: hidden;
+  background-color: #1C2B3A;
 }
 
 .container {
@@ -15,18 +16,19 @@
 .header {
   margin-bottom: 80px;
   max-width: 800px;
+  padding-top: var(--section-padding); /* Internal top padding */
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #C84B2A;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .eyebrow::before {
@@ -40,20 +42,21 @@
 
 .h2 {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.05;
-  color: #1A1A1A;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
+  color: #FFFFFF;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   margin-bottom: 24px;
 }
 
 .introText {
   font-family: var(--font-body);
-  font-size: 18px;
-  color: #4A4A4A;
-  line-height: 1.6;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
   max-width: 720px;
 }
 
@@ -65,28 +68,6 @@
   margin-bottom: 80px;
 }
 
-.dividerDot {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  border-left: 1px dashed rgba(0,0,0,0.15);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.dividerDot::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -4px;
-  width: 8px;
-  height: 8px;
-  background-color: #C84B2A;
-  transform: translateY(-50%);
-}
-
 .column {
   display: flex;
   flex-direction: column;
@@ -94,18 +75,18 @@
 }
 
 .problemColumn {
-  background: rgba(200,75,42,0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .solutionColumn {
-  background: rgba(0,0,0,0.02);
+  /* No border needed here */
 }
 
 .cardLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   color: #C84B2A;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -113,28 +94,30 @@
 
 .h3 {
   font-family: var(--font-heading);
-  font-size: 22px;
-  line-height: 1.2;
-  color: #1A1A1A;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #FFFFFF;
   margin-bottom: 24px;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .body {
   font-family: var(--font-body);
   font-size: 16px;
-  color: #4A4A4A;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.75;
   margin-bottom: 32px;
 }
 
 .mutedLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #8A8A8A;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
@@ -147,46 +130,55 @@
 }
 
 .listItem {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #4A4A4A;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
-  align-items: center;
-  line-height: 1.5;
+  align-items: flex-start;
+  line-height: 1.6;
+  gap: 12px;
 }
 
 .bullet {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: #C84B2A;
-  margin-right: 10px;
-  vertical-align: middle;
+  content: "";
+  width: 12px;
+  height: 1px;
+  background-color: #C84B2A;
+  margin-top: 11px;
   flex-shrink: 0;
 }
 
 .calloutBar {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(200,75,42,0.04) 0px,
-    rgba(200,75,42,0.04) 1px,
-    transparent 1px,
-    transparent 28px
-  );
-  border-top: 1px solid rgba(0,0,0,0.08);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: none;
   border-left: 3px solid #C84B2A;
-  padding: 20px 28px;
+  padding: 0 0 0 28px;
+  margin: 0 0 100px 0;
+  position: relative;
+}
+
+.quoteMark {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 88px;
+  line-height: 0.7;
+  color: #C84B2A;
+  margin-bottom: 16px;
+  opacity: 0.4;
+  letter-spacing: 0.05em;
 }
 
 .calloutText {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 16px;
-  color: #4A4A4A;
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
+}
+
+.dividerDot {
+  display: none; /* Removed as we now use borderRight on the column */
 }
 
 @media (max-width: 1024px) {
@@ -195,14 +187,10 @@
     gap: 40px;
   }
   
-  .dividerDot {
-    display: none;
-  }
-  
-  .sectionNumber {
-    font-size: 80px;
-    top: 20px;
-    right: 20px;
+  .problemColumn {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 40px;
   }
 }
 

@@ -1,5 +1,6 @@
 .section {
-  padding: 100px 0;
+  padding: 0;
+  background-color: #FFFFFF;
 }
 
 .container {
@@ -9,19 +10,21 @@
 }
 
 .header {
-  margin-bottom: 64px;
+  padding-top: 140px;
+  margin-bottom: 100px;
+  max-width: 850px;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #C84B2A;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .eyebrow::before {
@@ -35,137 +38,222 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.05;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: #1A1A1A;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
-.group {
-  margin-bottom: 40px;
-}
-
-.mutedLabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  color: #8A8A8A;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 24px;
-  display: block;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.credentialCard {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.10);
-  padding: 20px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.marker {
-  width: 22px;
-  height: 22px;
-  background-color: #C84B2A;
-  flex-shrink: 0;
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: column;
-}
-
-.cardTitle {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
-  color: #1A1A1A;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.cardDescription {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: #4A4A4A;
-  line-height: 1.6;
+.credentialsGroup {
+  margin-bottom: 160px;
 }
 
 .labelContainer {
-  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.mutedLabel {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  color: #C84B2A;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
 }
 
 .labelRule {
-  height: 1px;
-  background-color: rgba(0,0,0,0.08);
-  width: 100%;
-  margin-top: 12px;
+  height: 2px;
+  background-color: #C84B2A;
+  flex-grow: 1;
+  opacity: 0.15;
 }
 
-.standardsSection {
-  padding: 64px 40px;
-  margin: 64px -40px 0;
+.credentialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px 80px;
+}
+
+.credentialRow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 24px;
+  border-left: 1px solid rgba(200, 75, 42, 0.2);
+}
+
+.registryIndex {
+  font-family: var(--font-heading);
+  font-size: 88px;
+  font-weight: 400;
+  color: #C84B2A;
+  opacity: 0.04;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+}
+
+.credentialContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.credentialTitle {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  color: #C84B2A; /* VIBRANT ACCENT COLOR */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.0;
+  letter-spacing: 0.04em;
+}
+
+.credentialDescription {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 1.8;
+  max-width: 90%;
+}
+
+.registryDot {
+  margin-top: 24px;
+  width: 24px;
+  height: 1px;
+  background-color: #C84B2A;
+}
+
+.standardsWrapper {
+  background-color: rgba(28, 43, 58, 0.94);
+  padding: var(--section-padding) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.standardsWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 40%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .standardsContent {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  padding-left: 40px;
 }
 
-.standardsRow {
+.standardsSubHeader {
+  margin-bottom: 80px;
+  max-width: 700px;
+}
+
+.standardsAccent {
+  width: 40px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-bottom: 24px;
+}
+
+.standardsHeaderLabel {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.standardsList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.standardCard {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-top: 2px solid #C84B2A;
-  padding: 20px;
+.standardRow {
   display: flex;
   flex-direction: column;
+  padding: 64px 48px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  background: none;
+  transition: all 0.3s ease;
 }
 
-.standardTitle {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  color: #C84B2A;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+.standardRow:last-child {
+  border-right: none;
+}
+
+.standardRow:hover {
+  background-color: rgba(255,255,255,0.03);
+}
+
+.standardCode {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.standardCode::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  background-color: #C84B2A;
+  margin-left: 16px;
 }
 
 .standardDescription {
   font-family: var(--font-body);
-  font-size: 13px;
-  color: #4A4A4A;
-  line-height: 1.6;
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
 }
 
-@media (max-width: 1024px) {
-  .grid, .standardsRow {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+  .credentialsGrid {
+    grid-template-columns: 1fr;
+    gap: 64px;
   }
 }
 
 @media (max-width: 768px) {
-  .grid, .standardsRow {
-    grid-template-columns: 1fr;
-  }
-  
   .container {
     padding: 0 24px;
+  }
+
+  .standardsList {
+    grid-template-columns: 1fr;
+  }
+
+  .standardRow {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 32px 0;
   }
 }

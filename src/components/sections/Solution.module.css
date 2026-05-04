@@ -19,11 +19,12 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 44px);
-  line-height: 1.0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
   color: var(--color-text-primary);
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .advantagesWrapper {
@@ -35,11 +36,13 @@
 
 .listTitle {
   font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 400;
   text-transform: uppercase;
   color: var(--color-text-primary);
   margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 
 .list {
@@ -54,7 +57,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -96,7 +99,7 @@
   font-family: var(--font-body);
   font-style: italic;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.75;
   color: var(--color-text-primary);
   margin: 0;
 }
